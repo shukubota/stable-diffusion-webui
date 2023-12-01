@@ -41,7 +41,7 @@ def main():
     if args.test_server:
         configure_for_tests()
 
-    if os.environ.get('ONLY_SETUP') == "1":
+    if '--only-setup' in sys.argv:
         return
     
     start()
