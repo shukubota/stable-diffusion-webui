@@ -97,8 +97,6 @@ def run(command, desc=None, errdesc=None, custom_env=None, live: bool = default_
         "errors": 'ignore',
     }
 
-    live = True
-
     if not live:
         run_kwargs["stdout"] = run_kwargs["stderr"] = subprocess.PIPE
 
@@ -361,14 +359,10 @@ def prepare_environment():
         )
     startup_timer.record("torch GPU test")
 
-    print(is_installed("clip"))
-    print("clip")
     if not is_installed("clip"):
         run_pip(f"install {clip_package}", "clip")
         startup_timer.record("install clip")
 
-    print(is_installed("open_clip"))
-    print("open_clip")
     if not is_installed("open_clip"):
         run_pip(f"install {openclip_package}", "open_clip")
         startup_timer.record("install open_clip")

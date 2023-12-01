@@ -23,10 +23,10 @@ fi
 
 # Read variables from webui-user.sh
 # shellcheck source=/dev/null
-# if [[ -f "$SCRIPT_DIR"/webui-user.sh ]]
-# then
-#     source "$SCRIPT_DIR"/webui-user.sh
-# fi
+if [[ -f "$SCRIPT_DIR"/webui-user.sh ]]
+then
+    source "$SCRIPT_DIR"/webui-user.sh
+fi
 
 # Set defaults
 # Install directory without trailing slash
